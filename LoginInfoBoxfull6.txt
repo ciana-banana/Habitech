@@ -1,0 +1,203 @@
+<!-- README -->
+<!-- 
+
+Fruttando le classi di bootstrap "order" è possibile riordinare il posizionamento delle colonne (celle) in una riga.
+https://getbootstrap.com/docs/4.0/layout/grid/#reordering
+Le celle che orizzontalmente non ci stanno, vanno sulla riga successiva.
+
+Il blocco "login" ha order 4: in questo modo, pur essendo fisicamente prima degli altri blocchi all'interno del DOM,
+fiene comunque spostato in 4^ posizione.
+Cioè significa che è possibile posizionare 3 "colonne" (celle) PRIMA dell'elemento di login, con order-1 => order-3
+
+Mentre quelle successive DEVONO avere order-5 o superiore.
+
+SE QUI non viene indicato un "order", la colonna con la login sarà al 4° posto comunque.
+Quindi i primi 3 "col" finiranno PRIMA di login, tutti gli altri DOPO, per questo conviene metterci comunque l'order.
+
+
+-->
+
+
+<style type="text/css">
+	body {
+		background-color: #615e5f;
+	}
+
+	.bgyellow {
+		background-color: #54ab32;
+		/* Corretto: FDFBEE 
+		Prova: FFFF00 */
+	}
+
+	.login {
+		border: 3rem solid #54ab32;
+		background-color: #fff;
+	}
+
+	#contentContainer.login {
+		border: 0px;
+	}
+
+	.row {
+		margin-right: 0px;
+		margin-left: 0px;
+	}
+
+	div.order-4.login {}
+
+	div.order-4.login .container {}
+
+
+	@media only screen and (max-width: 1500px) {
+
+		div.order-4.login {
+			padding: 15px;
+		}
+
+
+
+		.col-md-8.order-3.d-none.d-sm-block.text-center.pos_left {}
+	}
+
+
+	.pos_top {
+
+		padding-top: 35px;
+	}
+
+	.pos_left {
+
+		padding-top: 90px;
+	}
+
+	.pos_bottom_a {
+		color: white;
+		opacity: 0.6;
+
+	}
+
+	.topLogo,
+	.bottomTools,
+	.topLanguages {
+		display: none;
+	}
+
+	.toprow {
+		height: 1rem;
+	}
+
+	.footer_text {
+		display: none;
+	}
+
+	#menuContainer {
+		margin: -20px 15px 0px 15px;
+		line-height: 3rem;
+		background-color: #54ab32;
+		line-height: 2rem;
+		padding-left: 25px;
+		padding-bottom: 25px;
+	}
+
+	.row.loginlogo {
+		padding-bottom: 2rem;
+		padding-top: 3rem;
+	}
+
+	.row.loginlogo img {
+		max-height: 100px;
+	}
+
+
+	.login .btn.btn-primary,
+	.login .btn.btn-primary:active,
+	.login .btn.btn-primary:focus {
+		background-color: #615e5f;
+		border-color: #615e5f;
+		box-shadow: none !important;
+	}
+
+	.order-3 img {
+		padding-left: 10%;
+		padding-right: 8%;
+	}
+
+	.footer {
+		padding-top: 2em;
+		margin-top: 0 !important;
+		margin-bottom: 0 !important;
+		padding-bottom: 0;
+		font-size: 0.9em;
+		line-height: 2em !important;
+		color: #fff;
+		box-sizing: border-box;
+
+		background-color: #5f5f5f;
+	}
+
+	.maintext {
+		color: #fff;
+
+	}
+</style>
+
+
+<!-- prima colonna #pos_top#" -->
+<div class="d-none col-sm-12 order-1 pos_top bgyellow toprow">
+	&nbsp;
+</div>
+<!-- fine prima colonna #pos_top# -->
+
+
+
+<!-- Prima colonna #pos_left#-->
+
+<div class="col-md-8 col-sm-6 order-3 bgyellow">
+	<div class="row">
+
+
+<div class="col-md-4 col-sm-6 d-none d-sm-block text-center pos_left bgyellow align-self-end" >
+	<img style="text-align: end;" src="./../File/EduPath/Login/tratto_negativo.png" class="img-fluid"
+		alt="Consolida - Piattaforma per la formazione e gli incontri di rete a distanza">
+	
+</div>
+<div class="col-md-8 col-sm-6 d-none d-sm-block text-center pos_left bgyellow">
+	<img src="./../File/EduPath/Login/home-description.png" class="img-fluid"
+		alt="Consolida - Piattaforma per la formazione e gli incontri di rete a distanza">
+</div>
+</div>
+<div class="row">
+<div class=" maintext none col-12 d-none d-sm-block pos_left bgyellow p-5">
+	<h1><strong>Piattaforma per formazione e incontri di rete a distanza gestiti e organizzati da Habitech</h1>
+	</strong></h1> 
+</div>
+</div>
+</div>
+
+
+
+<!-- Colonna Login (order-4)-->
+
+
+<!-- Riga prima del footer-->
+<div class="d-none col-sm-12 order-5 pos_top bgyellow toprow">
+	&nbsp;
+</div>
+
+<!-- Colonna larghezza 100 dopo login #pos_bottom_a# -->
+
+<div class="w-100 order-6 pos_bottom_a footer text-center">
+	<strong>Habitech - Distretto Tecnologico Trentino S.c. a r.l.</strong>
+	<br> Piazza Manifattura, 1 38068 Rovereto (TN) Italy | +39 0464 443450 - <u>info@dttn.it </u><br>
+	<div style="text-align: center;"><span style="font-size: 10pt;"><em>powered by <a href="https://www.edutech.it"
+					target="_blank" style="color: #fff;">Edutech</a></em></span></div>
+</div>
+
+<!-- Colonna larghezza 100 dopo login #pos_bottom_b# -->
+<!-- <div class="d-none w-100 order-5 pos_bottom_b"> -->
+<!-- <div class="row"> -->
+<!-- <div class="col-12 text-center"> -->
+<!-- <h2>pos_bottom_b</h2> -->
+<!-- </div> -->
+<!-- </div> -->
+<!-- </div> -->
